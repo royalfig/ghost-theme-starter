@@ -1,0 +1,19 @@
+{{!-- Put this into default.hbs --}}
+{{!< default}}
+
+{{#post}}
+
+<header>
+    <h1>{{title}}</h1>
+</header>
+
+<article>
+    {{content}}
+</article>
+
+{{/post}}
+
+
+{{#contentFor 'scripts'}}
+    <script src="{{asset 'built/post.js'}}" defer></script>
+{{/contentFor}}

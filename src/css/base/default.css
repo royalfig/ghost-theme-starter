@@ -1,0 +1,11 @@
+html {
+  scroll-behavior: smooth;
+  font-size: 1rem;
+  font-size: clamp(
+    1rem,
+    0.8392857142857143rem + 0.4464285714285714vw,
+    1.375rem
+  );
+  line-height: 1.6;
+  font-family: var(--f-family);
+}

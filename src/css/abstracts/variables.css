@@ -1,0 +1,25 @@
+:root {
+  --f-family: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
+    oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --h1: 2rem;
+  --h2: 1.7411rem;
+  --h3: 1.5157rem;
+  --h4: 1.3195rem;
+  --h5: 1.1487rem;
+  --h6: 1rem;
+  --small: 0.8706rem;
+
+  --gap: 1rem;
+}
+
+@media (min-width: 576px) {
+  :root {
+    --gap: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --gap: 3rem;
+  }
+}
