@@ -1,8 +1,10 @@
-.grid {
+.grid,
+.post {
   display: grid;
   grid-template-columns: var(--gap) 1fr minmax(100px, 992px) 1fr var(--gap);
 }
 
-.grid > * {
+.grid > *,
+.post > * {
   grid-column: 3 / 4;
 }

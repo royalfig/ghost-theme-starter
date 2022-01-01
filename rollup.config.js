@@ -9,19 +9,20 @@ import atImport from 'postcss-import';
 import postcssPresetEnv from 'postcss-preset-env';
 import cssnano from 'cssnano';
 
+const postcssConfig = postcss({
+  extract: true,
+  sourceMap: true,
+  plugins: [
+    atImport,
+    postcssPresetEnv({ features: { 'nesting-rules': true } }),
+    process.env.NODE_ENV === 'production' && cssnano({ preset: 'default' }),
+  ],
+});
+
 const plugins = [
   commonjs(),
   nodeResolve(),
   babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
-  postcss({
-    extract: true,
-    sourceMap: true,
-    plugins: [
-      atImport,
-      postcssPresetEnv({ features: { 'nesting-rules': true } }),
-      process.env.NODE_ENV === 'production' && cssnano({ preset: 'default' }),
-    ],
-  }),
   process.env.NODE_ENV === 'production' && terser(),
   replace({
     ENV: JSON.stringify(process.env.NODE_ENV || 'production'),
@@ -34,16 +35,16 @@ export default [
     output: {
       file: 'assets/built/app.js',
       format: 'iife',
-      sourcemap: process.env.NODE_ENV === 'production' ? false : 'inline',
+      sourcemap: true,
     },
-    plugins,
+    plugins: [...plugins, postcssConfig],
   },
   {
     input: 'src/js/post/index.js',
     output: {
       file: 'assets/built/post.js',
       format: 'iife',
-      sourcemap: process.env.NODE_ENV === 'production' ? false : 'inline',
+      sourcemap: true,
     },
     plugins,
   },

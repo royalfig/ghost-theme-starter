@@ -1,13 +1,25 @@
-/* These styles are required by Ghost 👻 and apply to editor cards. Styles are now shipped by default, so hopefully will no longer be a gscan requirement in future: https://github.com/TryGhost/Ghost/tree/main/core/frontend/src/cards/css */
+/* These styles are required by Ghost 👻 and apply to editor cards. These styles are derived from Ghost defaults: https://ghost.org/docs/themes/content/ */
 
 /* Image Card */
+.kg-image-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* By using CSS grid, you can have an elegant solution to accomodate wide/full image cards and other embeds */
 .kg-width-wide {
+  grid-column: 2 / -2;
 }
 
 .kg-width-full {
+  grid-column: 1 / -1;
 }
 
 /* Gallery */
+.kg-gallery-card {
+  grid-column: 1 / -1;
+}
+
 .kg-gallery-card,
 .kg-gallery-card * {
   box-sizing: border-box;

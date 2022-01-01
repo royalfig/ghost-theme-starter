@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="{{asset "built/app.css"}}" />
         <script src="{{asset "built/app.js"}}" defer></script>
 
-        {{!-- contentFor/block scripts - user with defer --}}
+        {{!-- contentFor/block scripts - use with defer --}}
         {{{block "scripts"}}}
         
         {{!-- Outputs important meta data and settings, should always be in <head> --}}
@@ -17,16 +17,21 @@
     </head>
 
     <body class="{{body_class}}">
-        {{!-- Navbar partial --}}
-        {{> "navbar"}}
+        
+        <div class="grid">
+            {{!-- Navbar partial --}}
+            {{> "navbar"}}
+        </div>
 
-        <main class="grid" id="theme-main">
+        <main id="theme-main">
             {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
             {{{body}}}
         </main>
 
-        {{!-- Navbar partial --}}
-        {{> "footer"}}
+        <div class="grid">
+            {{!-- Navbar partial --}}
+            {{> "footer"}}
+        </div>
 
         {{!-- Outputs important scripts - should always be included before closing body tag --}}
         {{ghost_foot}}

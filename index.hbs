@@ -1,17 +1,27 @@
 {{!-- Put this into default.hbs --}}
 {{!< default}}
+<section class="grid">
+    <header>
+        <h1>{{@site.title}}</h1>
+        <p>{{@site.description}}</p>
+    </header>
 
-<header>
-    <h1>{{@site.title}}</h1>
-    <p>{{@site.description}}</p>
-</header>
+    {{#foreach posts}}
 
-{{#foreach posts}}
+        <article>
+            {{#if feature_image}}
+                <div>
+                    <img src="{{img_url feature_image size="m"}}" alt=""> 
+                </div>
+            {{/if}}
+            <div>
+                <h2><a href="{{url}}">{{title}}</a></h2>
+                <p>{{authors}} &bull; {{date published_at timeago="true"}} &bull; {{tags}}</p>
+                <p>{{excerpt}}</p>
+            </div>
+        </article>
 
-    <article>
-        <h2><a href="{{url}}">{{title}}</a></h2>
-        <p>{{authors}} &bull; {{date published_at timeago="true"}} &bull; {{tags}}</p>
-        <p>{{excerpt}}</p>
-    </article>
+    {{/foreach}}
 
-{{/foreach}}
+    {{pagination}}
+</section>

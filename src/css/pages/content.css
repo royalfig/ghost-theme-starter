@@ -1,0 +1,11 @@
+/* These styles define the content of a post (and page). You could add styles for bold font, quotes, etc. */
+
+.post > * {
+  margin-bottom: 1rem;
+}
+
+.post > ul,
+.post > ol {
+  padding-inline-start: 1rem;
+  list-style-position: inside;
+}

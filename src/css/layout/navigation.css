@@ -1,0 +1,11 @@
+nav,
+footer {
+  padding: 1rem 0;
+}
+nav ul,
+footer ul {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+  font-size: var(--small);
+}

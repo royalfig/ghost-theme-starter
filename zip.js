@@ -1,3 +1,6 @@
+/* 
+Use this script to create a zip file of your theme. Add or remove files you want to include.
+*/
 const AdmZip = require('adm-zip');
 
 const zip = new AdmZip();
@@ -15,4 +18,4 @@ zip.addLocalFile('./index.hbs');
 zip.addLocalFile('./package.json');
 zip.addLocalFile('./post.hbs');
 zip.addLocalFile('./README.md');
-zip.writeZip('./mel.zip');
+zip.writeZip('./theme.zip');

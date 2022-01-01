@@ -1,0 +1,34 @@
+.home-template article {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: clamp(3rem, 3rem + 2vw, 5rem);
+}
+
+@media (min-width: 576px) {
+  .home-template article {
+    flex-wrap: initial;
+  }
+}
+
+.home-template article h2 {
+  margin-top: 0;
+}
+.home-template article p:not(:last-child) {
+  margin-bottom: 1rem;
+  font-size: var(--small);
+}
+
+.home-template article img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+@media (min-width: 786px) {
+  .home-template article img {
+    width: 300px;
+    height: 300px;
+  }
+}
