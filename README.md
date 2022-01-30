@@ -21,6 +21,8 @@ ln -s ~/your-theme-folder .
 # Start the live reload server and compile your JS/CSS assets, and watch for changes
 npm run dev
 ```
+If your site isn't refreshing, you'll likely need to disable your browser's caching. Go to the Network tab in your dev tools and toggle "Disable cache".
+
 ## Production Scripts
 ```bash
 # Fix any CSS issues, compile your JS/CSS assets for production, and create a ZIP file
