@@ -1,4 +1,5 @@
 const livereload = require('livereload');
+
 const server = livereload.createServer();
-server.watch(__dirname + '/assets');
+server.watch('../assets');
 console.log('Reload server started...');
