@@ -59,7 +59,7 @@
     "@rollup/plugin-node-resolve": "13.3.0",
     "adm-zip": "0.5.9",
     "cssnano": "5.1.12",
-    "eslint": "8.20.0",
+    "eslint": "8.21.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.26.0",
     "gscan": "4.32.0",
